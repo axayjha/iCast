@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17132.0.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17132.0.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="iCast" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -687,31 +689,172 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="fPd-E7-hr9" kind="relationship" relationship="window.shadowedContentViewController" id="0Kh-YE-U6s"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="60" y="254"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="WGv-0p-4ap">
+            <objects>
+                <splitViewController id="fPd-E7-hr9" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="kpX-2Z-vap"/>
+                        <splitViewItem id="vYs-C9-a3A"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="wPC-H1-SAI">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="fPd-E7-hr9" id="FfW-pL-XDh"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="wPC-H1-SAI" id="XzM-sw-BAV"/>
+                        <segue destination="5iJ-wm-J4a" kind="relationship" relationship="splitItems" id="bBT-ek-qkO"/>
+                        <segue destination="3Sj-Q8-2Ms" kind="relationship" relationship="splitItems" id="Iwn-hP-B9d"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="b5L-XK-JPw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="683"/>
+        </scene>
+        <!--Podcasts View Controller-->
+        <scene sceneID="Odu-iW-WiH">
+            <objects>
+                <viewController id="5iJ-wm-J4a" customClass="PodcastsViewController" customModule="iCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="f7X-id-N7B">
+                        <rect key="frame" x="0.0" y="0.0" width="217" height="365"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SN3-5Y-O2q">
+                                <rect key="frame" x="-1" y="-2" width="219" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="26" id="4TV-nJ-8Os"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Add Podcast" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FEU-oX-Y74">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="addPodcastClicked:" target="5iJ-wm-J4a" id="fiJ-gk-NTp"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qFG-4e-11a">
+                                <rect key="frame" x="5" y="31" width="207" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Uve-hc-GdW"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Add Podcast URL..." drawsBackground="YES" id="WhB-WL-dUr">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Wh-Ie-kqC">
+                                <rect key="frame" x="0.0" y="57" width="217" height="308"/>
+                                <clipView key="contentView" id="x9J-ay-qRh">
+                                    <rect key="frame" x="1" y="0.0" width="215" height="307"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="qWL-U6-FRO" viewBased="YES" id="Dm0-5S-Yp8">
+                                            <rect key="frame" x="0.0" y="0.0" width="215" height="282"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="212" minWidth="40" maxWidth="1000" id="qWK-8L-bcx">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Podcasts">
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="aNI-xW-abe">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="Z0c-eS-68Q">
+                                                            <rect key="frame" x="1" y="1" width="212" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rek-ks-bsQ">
+                                                                    <rect key="frame" x="0.0" y="1" width="212" height="16"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="VLO-ra-X4Y">
+                                                                        <font key="font" usesAppearanceFont="YES"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="rek-ks-bsQ" id="e1F-FN-faa"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="45c-Hr-B01">
+                                    <rect key="frame" x="1" y="35" width="42" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="R51-AX-VSY">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="qWL-U6-FRO">
+                                    <rect key="frame" x="0.0" y="0.0" width="215" height="25"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="SN3-5Y-O2q" firstAttribute="leading" secondItem="f7X-id-N7B" secondAttribute="leading" constant="5" id="28Z-gB-JXZ"/>
+                            <constraint firstItem="3Wh-Ie-kqC" firstAttribute="top" secondItem="f7X-id-N7B" secondAttribute="top" id="7My-6U-oQE"/>
+                            <constraint firstItem="3Wh-Ie-kqC" firstAttribute="leading" secondItem="f7X-id-N7B" secondAttribute="leading" id="CFA-KT-KL1"/>
+                            <constraint firstAttribute="trailing" secondItem="qFG-4e-11a" secondAttribute="trailing" constant="5" id="VPB-fc-Jr1"/>
+                            <constraint firstAttribute="bottom" secondItem="SN3-5Y-O2q" secondAttribute="bottom" constant="5" id="WXe-L2-el2"/>
+                            <constraint firstItem="SN3-5Y-O2q" firstAttribute="top" secondItem="qFG-4e-11a" secondAttribute="bottom" id="XVU-2O-ash"/>
+                            <constraint firstItem="qFG-4e-11a" firstAttribute="top" secondItem="3Wh-Ie-kqC" secondAttribute="bottom" constant="5" id="a1a-UH-2dv"/>
+                            <constraint firstAttribute="trailing" secondItem="SN3-5Y-O2q" secondAttribute="trailing" constant="5" id="ehJ-Wo-S66"/>
+                            <constraint firstItem="qFG-4e-11a" firstAttribute="leading" secondItem="f7X-id-N7B" secondAttribute="leading" constant="5" id="tNc-CZ-qT8"/>
+                            <constraint firstAttribute="trailing" secondItem="3Wh-Ie-kqC" secondAttribute="trailing" id="zzG-Ci-lUy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="podcastURLTextField" destination="qFG-4e-11a" id="UGa-t1-tMd"/>
+                    </connections>
+                </viewController>
+                <customObject id="czH-Qg-c9z" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746.5" y="466.5"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="U2X-mT-hdc">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="3Sj-Q8-2Ms" sceneMemberID="viewController">
+                    <view key="view" id="wV5-8N-6Ah">
+                        <rect key="frame" x="0.0" y="0.0" width="623" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="YbK-fN-oLg" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="876.5" y="888"/>
         </scene>
     </scenes>
 </document>
