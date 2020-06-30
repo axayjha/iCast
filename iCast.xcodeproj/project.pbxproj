@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA68C7BC24AB0AAE0092D201 /* TheSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68C7BB24AB0AAE0092D201 /* TheSplitViewController.swift */; };
+		BA68C7BE24AB13B10092D201 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA68C7BD24AB13B10092D201 /* Episode.swift */; };
 		BA7A83BA24A8E12A00EB3F15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7A83B924A8E12A00EB3F15 /* AppDelegate.swift */; };
 		BA7A83BF24A8E12A00EB3F15 /* iCast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA7A83BD24A8E12A00EB3F15 /* iCast.xcdatamodeld */; };
 		BA7A83C124A8E12C00EB3F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA7A83C024A8E12C00EB3F15 /* Assets.xcassets */; };
 		BA7A83C424A8E12C00EB3F15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA7A83C224A8E12C00EB3F15 /* Main.storyboard */; };
+		BAB25B7624AB5488002CFA57 /* EpisodeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB25B7524AB5488002CFA57 /* EpisodeCellViewController.swift */; };
 		BAC8820C24A9EDD700E970B9 /* PodcastsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC8820B24A9EDD700E970B9 /* PodcastsViewController.swift */; };
 		BAC8820E24AA5D8300E970B9 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC8820D24AA5D8300E970B9 /* Parser.swift */; };
 		BAC8821224AA666D00E970B9 /* XMLIndexer+XMLIndexerDeserializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC8821024AA666D00E970B9 /* XMLIndexer+XMLIndexerDeserializable.swift */; };
 		BAC8821324AA666D00E970B9 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC8821124AA666D00E970B9 /* SWXMLHash.swift */; };
+		BAEA74C924AB0583000840A0 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEA74C824AB0583000840A0 /* EpisodesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA68C7BB24AB0AAE0092D201 /* TheSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheSplitViewController.swift; sourceTree = "<group>"; };
+		BA68C7BD24AB13B10092D201 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		BA7A83B624A8E12A00EB3F15 /* iCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7A83B924A8E12A00EB3F15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA7A83BE24A8E12A00EB3F15 /* iCast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iCast.xcdatamodel; sourceTree = "<group>"; };
@@ -25,10 +31,12 @@
 		BA7A83C324A8E12C00EB3F15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA7A83C524A8E12C00EB3F15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA7A83C624A8E12C00EB3F15 /* iCast.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iCast.entitlements; sourceTree = "<group>"; };
+		BAB25B7524AB5488002CFA57 /* EpisodeCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewController.swift; sourceTree = "<group>"; };
 		BAC8820B24A9EDD700E970B9 /* PodcastsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsViewController.swift; sourceTree = "<group>"; };
 		BAC8820D24AA5D8300E970B9 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		BAC8821024AA666D00E970B9 /* XMLIndexer+XMLIndexerDeserializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XMLIndexer+XMLIndexerDeserializable.swift"; sourceTree = "<group>"; };
 		BAC8821124AA666D00E970B9 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
+		BAEA74C824AB0583000840A0 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,10 @@
 				BAC8820F24AA664400E970B9 /* SWXMLHash */,
 				BA7A83B924A8E12A00EB3F15 /* AppDelegate.swift */,
 				BAC8820B24A9EDD700E970B9 /* PodcastsViewController.swift */,
+				BAEA74C824AB0583000840A0 /* EpisodesViewController.swift */,
+				BA68C7BB24AB0AAE0092D201 /* TheSplitViewController.swift */,
+				BAB25B7524AB5488002CFA57 /* EpisodeCellViewController.swift */,
+				BA68C7BD24AB13B10092D201 /* Episode.swift */,
 				BAC8820D24AA5D8300E970B9 /* Parser.swift */,
 				BA7A83C024A8E12C00EB3F15 /* Assets.xcassets */,
 				BA7A83C224A8E12C00EB3F15 /* Main.storyboard */,
@@ -154,9 +166,13 @@
 			files = (
 				BAC8820E24AA5D8300E970B9 /* Parser.swift in Sources */,
 				BAC8821324AA666D00E970B9 /* SWXMLHash.swift in Sources */,
+				BAEA74C924AB0583000840A0 /* EpisodesViewController.swift in Sources */,
+				BA68C7BC24AB0AAE0092D201 /* TheSplitViewController.swift in Sources */,
 				BA7A83BF24A8E12A00EB3F15 /* iCast.xcdatamodeld in Sources */,
 				BAC8820C24A9EDD700E970B9 /* PodcastsViewController.swift in Sources */,
 				BAC8821224AA666D00E970B9 /* XMLIndexer+XMLIndexerDeserializable.swift in Sources */,
+				BA68C7BE24AB13B10092D201 /* Episode.swift in Sources */,
+				BAB25B7624AB5488002CFA57 /* EpisodeCellViewController.swift in Sources */,
 				BA7A83BA24A8E12A00EB3F15 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
