@@ -690,7 +690,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -1026,6 +1026,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteButton" destination="bMN-Uo-YIg" id="osT-Hj-1KB"/>
                         <outlet property="imageView" destination="PTE-dx-RcU" id="ZSK-GU-7fr"/>
                         <outlet property="pausePlayButton" destination="jxK-sX-had" id="cho-an-JXs"/>
                         <outlet property="tableView" destination="a9B-4S-7L0" id="2O6-Jc-C3j"/>

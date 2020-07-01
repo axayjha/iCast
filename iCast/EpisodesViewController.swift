@@ -14,6 +14,7 @@ class EpisodesViewController: NSViewController, NSTableViewDelegate, NSTableView
     @IBOutlet weak var imageView: NSImageView!
     @IBOutlet weak var pausePlayButton: NSButton!
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var deleteButton: NSButton!
     
     var podcast: Podcast? = nil
     var podcastsVC : PodcastsViewController? = nil
@@ -24,6 +25,7 @@ class EpisodesViewController: NSViewController, NSTableViewDelegate, NSTableView
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        updateView()
     }
     
     func updateView() {
@@ -38,6 +40,14 @@ class EpisodesViewController: NSViewController, NSTableViewDelegate, NSTableView
             imageView.image = image
         } else {
             imageView.image = nil
+        }
+        
+        if podcast != nil {
+            tableView.isHidden = false
+            deleteButton.isHidden = false
+        } else {
+            tableView.isHidden = true
+            deleteButton.isHidden = true
         }
         
         pausePlayButton.isHidden = true
@@ -101,9 +111,14 @@ class EpisodesViewController: NSViewController, NSTableViewDelegate, NSTableView
         let episode = episodes[row]
         let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier("episodeCell"), owner: self) as? EpisodeCellViewController
         cell?.titleLabel.stringValue = episode.title
-        cell?.pubDateLabel.stringValue = episode.pubDate.description
-        print(episode.htmlDescription)
+        
+        //print(episode.htmlDescription)
         cell?.descriptionWebView.loadHTMLString(episode.htmlDescription, baseURL: nil)
+        
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "MMM d, yyyy"
+        cell?.pubDateLabel.stringValue = dateformatter.string(from: episode.pubDate)
+        
         return cell
     }
     
